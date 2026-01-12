@@ -3,16 +3,31 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { List } from 'lucide-react';
 
+import driftImg from '../assets/images/drift_championship.png?w=400;800&format=webp&as=srcset';
+import driftImgFallback from '../assets/images/drift_championship.png?w=800&format=jpg';
+import mountainImg from '../assets/images/mountain_ridge.png?w=400;800&format=webp&as=srcset';
+import mountainImgFallback from '../assets/images/mountain_ridge.png?w=800&format=jpg';
+import cityImg from '../assets/images/city_skyline_night.png?w=400;800&format=webp&as=srcset';
+import cityImgFallback from '../assets/images/city_skyline_night.png?w=800&format=jpg';
+import villaImg from '../assets/images/luxury_villa.png?w=400;800&format=webp&as=srcset';
+import villaImgFallback from '../assets/images/luxury_villa.png?w=800&format=jpg';
+import desertImg from '../assets/images/desert_rally.png?w=400;800&format=webp&as=srcset';
+import desertImgFallback from '../assets/images/desert_rally.png?w=800&format=jpg';
+import oceanImg from '../assets/images/ocean_cliff_dive.png?w=400;800&format=webp&as=srcset';
+import oceanImgFallback from '../assets/images/ocean_cliff_dive.png?w=800&format=jpg';
+
 const categories = ["All", "Automotive", "Cinematic", "Real Estate", "Freestyle"];
 
 const projects = [
-    { id: 1, title: "Drift Championship 2024", category: "Automotive", image: "/drift_championship.png" },
-    { id: 2, title: "Mountain Ridge", category: "Cinematic", image: "/mountain_ridge.png" },
-    { id: 3, title: "City Skyline Night", category: "Freestyle", image: "/city_skyline_night.png" },
-    { id: 4, title: "Luxury Villa Tour", category: "Real Estate", image: "/luxury_villa.png" },
-    { id: 5, title: "Desert Rally", category: "Automotive", image: "/desert_rally.png" },
-    { id: 6, title: "Ocean Cliff Dive", category: "Cinematic", image: "/ocean_cliff_dive.png" },
+    { id: 1, title: "Drift Championship 2024", category: "Automotive", image: driftImgFallback, srcset: driftImg },
+    { id: 2, title: "Mountain Ridge", category: "Cinematic", image: mountainImgFallback, srcset: mountainImg },
+    { id: 3, title: "City Skyline Night", category: "Freestyle", image: cityImgFallback, srcset: cityImg },
+    { id: 4, title: "Luxury Villa Tour", category: "Real Estate", image: villaImgFallback, srcset: villaImg },
+    { id: 5, title: "Desert Rally", category: "Automotive", image: desertImgFallback, srcset: desertImg },
+    { id: 6, title: "Ocean Cliff Dive", category: "Cinematic", image: oceanImgFallback, srcset: oceanImg },
 ];
+
+
 
 const Portfolio = () => {
     const [filter, setFilter] = useState("All");
@@ -64,6 +79,8 @@ const Portfolio = () => {
                             >
                                 <img
                                     src={project.image}
+                                    srcSet={project.srcset}
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                     alt={project.title}
                                     className="w-full h-full object-cover opacity-100 group-hover:scale-110 transition-transform duration-700"
                                 />

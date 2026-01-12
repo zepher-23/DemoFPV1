@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Play } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import heroImg from '../assets/images/hero.png?w=800;1280;1920&format=webp&as=srcset';
+import heroImgFallback from '../assets/images/hero.png?w=1920&format=jpg';
 
 const Home = () => {
     return (
@@ -11,7 +13,9 @@ const Home = () => {
                 <div className="absolute inset-0 z-0">
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent z-10" />
                     <img
-                        src="/hero.png"
+                        src={heroImgFallback}
+                        srcSet={heroImg}
+                        sizes="100vw"
                         alt="Drone Background"
                         className="w-full h-full object-cover opacity-60"
                     />
