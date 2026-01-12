@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion';
+import pilotImg from '../assets/images/pilot_portrait.png?w=400;800&format=webp&as=srcset';
+import pilotImgFallback from '../assets/images/pilot_portrait.png?w=800&format=jpg';
 
 const About = () => {
     return (
@@ -14,7 +16,9 @@ const About = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24">
                         <div className="relative aspect-[3/4] rounded-lg overflow-hidden">
                             <img
-                                src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                src={pilotImgFallback}
+                                srcSet={pilotImg}
+                                sizes="(max-width: 768px) 100vw, 400px"
                                 alt="Pilot Portrait"
                                 className="w-full h-full object-cover"
                             />
