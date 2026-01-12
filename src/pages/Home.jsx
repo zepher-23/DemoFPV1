@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Play } from 'lucide-react';
+import { ArrowRight, Play, Camera, Component, MapPin, User, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import heroImg from '../assets/images/hero.png?w=800;1280;1920&format=webp&as=srcset';
 import heroImgFallback from '../assets/images/hero.png?w=1920&format=jpg';
@@ -57,23 +57,42 @@ const Home = () => {
             </section>
 
             {/* Mobile Navigation Options */}
-            <section className="md:hidden py-12 bg-black border-b border-white/5">
-                <div className="container mx-auto px-6">
-                    <div className="grid grid-cols-2 gap-4">
-                        <Link to="/portfolio" className="p-4 bg-neutral-900/80 backdrop-blur-md rounded-lg border border-white/10 text-center hover:border-cyan-400 transition-colors">
-                            <span className="block text-cyan-400 font-bold uppercase tracking-wider text-sm">Portfolio</span>
+            {/* Mobile Navigation Options (Bento Grid) */}
+            <section className="md:hidden py-10 bg-black">
+                <div className="container mx-auto px-4">
+                    <div className="grid grid-cols-2 gap-3">
+                        {/* Portfolio - Large Card */}
+                        <Link to="/portfolio" className="col-span-2 group relative h-32 overflow-hidden rounded-2xl border border-white/10 bg-neutral-900/50 p-6 flex items-center justify-between">
+                            <div className="absolute inset-0 bg-gradient-to-r from-cyan-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                            <div className="relative z-10">
+                                <h3 className="text-2xl font-black italic uppercase font-orbitron text-white">Portfolio</h3>
+                                <span className="text-xs text-gray-400 font-mono">Exploring the limits</span>
+                            </div>
+                            <Camera className="text-cyan-400 w-10 h-10 opacity-80 group-hover:scale-110 transition-transform" />
                         </Link>
-                        <Link to="/services" className="p-4 bg-neutral-900/80 backdrop-blur-md rounded-lg border border-white/10 text-center hover:border-cyan-400 transition-colors">
-                            <span className="block text-white font-bold uppercase tracking-wider text-sm">Services</span>
+
+                        {/* Services */}
+                        <Link to="/services" className="group rounded-2xl border border-white/10 bg-neutral-900/50 p-5 flex flex-col justify-between h-32 hover:border-cyan-400/50 transition-colors">
+                            <Component className="text-gray-400 group-hover:text-cyan-400 transition-colors mb-auto" />
+                            <span className="font-bold uppercase text-white tracking-wider text-sm">Services</span>
                         </Link>
-                        <Link to="/locations" className="p-4 bg-neutral-900/80 backdrop-blur-md rounded-lg border border-white/10 text-center hover:border-cyan-400 transition-colors">
-                            <span className="block text-white font-bold uppercase tracking-wider text-sm">Locations</span>
+
+                        {/* Locations */}
+                        <Link to="/locations" className="group rounded-2xl border border-white/10 bg-neutral-900/50 p-5 flex flex-col justify-between h-32 hover:border-purple-400/50 transition-colors">
+                            <MapPin className="text-gray-400 group-hover:text-purple-400 transition-colors mb-auto" />
+                            <span className="font-bold uppercase text-white tracking-wider text-sm">Zones</span>
                         </Link>
-                        <Link to="/about" className="p-4 bg-neutral-900/80 backdrop-blur-md rounded-lg border border-white/10 text-center hover:border-cyan-400 transition-colors">
-                            <span className="block text-white font-bold uppercase tracking-wider text-sm">About</span>
+
+                        {/* About */}
+                        <Link to="/about" className="group rounded-2xl border border-white/10 bg-neutral-900/50 p-5 flex flex-col justify-between h-32 hover:border-cyan-400/50 transition-colors">
+                            <User className="text-gray-400 group-hover:text-cyan-400 transition-colors mb-auto" />
+                            <span className="font-bold uppercase text-white tracking-wider text-sm">Pilot</span>
                         </Link>
-                        <Link to="/contact" className="col-span-2 p-4 bg-neutral-900/80 backdrop-blur-md rounded-lg border border-white/10 text-center hover:border-cyan-400 transition-colors">
-                            <span className="block text-white font-bold uppercase tracking-wider text-sm">Contact</span>
+
+                        {/* Contact - Highlighted */}
+                        <Link to="/contact" className="group rounded-2xl bg-gradient-to-br from-cyan-600 to-cyan-800 p-5 flex flex-col justify-between h-32 shadow-lg shadow-cyan-900/20 hover:brightness-110 transition-all">
+                            <Mail className="text-white mb-auto" />
+                            <span className="font-black italic uppercase text-white tracking-wider text-sm">Book Now</span>
                         </Link>
                     </div>
                 </div>
