@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { NavLink, Link } from 'react-router-dom';
 import { Menu, X, Plane } from 'lucide-react';
 import { cn } from '../lib/utils';
@@ -86,34 +87,37 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Menu Overlay */}
-            <AnimatePresence>
-                {mobileMenuOpen && (
-                    <motion.div
-                        initial={{ opacity: 0, x: '100%' }}
-                        animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: '100%' }}
-                        className="fixed inset-0 bg-black z-50 flex flex-col items-center justify-center space-y-8 md:hidden"
-                    >
-                        <button
-                            className="absolute top-6 right-6 text-white/50 hover:text-white"
-                            onClick={() => setMobileMenuOpen(false)}
+            {createPortal(
+                <AnimatePresence>
+                    {mobileMenuOpen && (
+                        <motion.div
+                            initial={{ opacity: 0, x: '100%' }}
+                            animate={{ opacity: 1, x: 0 }}
+                            exit={{ opacity: 0, x: '100%' }}
+                            className="fixed inset-0 bg-black z-[100] flex flex-col items-center justify-center space-y-8 md:hidden"
                         >
-                            <X className="w-10 h-10" />
-                        </button>
-
-                        {navLinks.map((link) => (
-                            <Link
-                                key={link.name}
-                                to={link.path}
+                            <button
+                                className="absolute top-6 right-6 text-white/50 hover:text-white"
                                 onClick={() => setMobileMenuOpen(false)}
-                                className="text-4xl font-bold text-white hover:text-cyan-400 uppercase tracking-tighter"
                             >
-                                {link.name}
-                            </Link>
-                        ))}
-                    </motion.div>
-                )}
-            </AnimatePresence>
+                                <X className="w-10 h-10" />
+                            </button>
+
+                            {navLinks.map((link) => (
+                                <Link
+                                    key={link.name}
+                                    to={link.path}
+                                    onClick={() => setMobileMenuOpen(false)}
+                                    className="text-4xl font-bold text-white hover:text-cyan-400 uppercase tracking-tighter"
+                                >
+                                    {link.name}
+                                </Link>
+                            ))}
+                        </motion.div>
+                    )}
+                </AnimatePresence>,
+                document.body
+            )}
         </nav>
     );
 };
