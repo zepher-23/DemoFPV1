@@ -66,12 +66,14 @@ const Navbar = () => {
                             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-400 group-hover:w-full transition-all duration-300" />
                         </NavLink>
                     ))}
-                    <Link
-                        to="/contact"
+                    <a
+                        href="https://wa.me/1234567890"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="px-5 py-2 bg-cyan-500 hover:bg-cyan-600 text-black font-bold text-sm uppercase tracking-wide rounded-sm transition-all transform hover:scale-105"
                     >
                         Book Flight
-                    </Link>
+                    </a>
                 </div>
 
                 {/* Mobile Toggle */}

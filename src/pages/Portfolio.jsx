@@ -6,12 +6,12 @@ import { List } from 'lucide-react';
 const categories = ["All", "Automotive", "Cinematic", "Real Estate", "Freestyle"];
 
 const projects = [
-    { id: 1, title: "Drift Championship 2024", category: "Automotive", image: "https://images.unsplash.com/photo-1517430529647-90cda5cf7e77?auto=format&fit=crop&q=80&w=800" },
-    { id: 2, title: "Mountain Ridge", category: "Cinematic", image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&q=80&w=800" },
-    { id: 3, title: "City Skyline Night", category: "Freestyle", image: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&q=80&w=800" },
-    { id: 4, title: "Luxury Villa Tour", category: "Real Estate", image: "https://images.unsplash.com/photo-1613490493576-2f045a407b08?auto=format&fit=crop&q=80&w=800" },
-    { id: 5, title: "Desert Rally", category: "Automotive", image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&q=80&w=800" },
-    { id: 6, title: "Ocean Cliff Dive", category: "Cinematic", image: "https://images.unsplash.com/photo-1505118380757-91f5f5632de0?auto=format&fit=crop&q=80&w=800" },
+    { id: 1, title: "Drift Championship 2024", category: "Automotive", image: "/drift_championship.png" },
+    { id: 2, title: "Mountain Ridge", category: "Cinematic", image: "/mountain_ridge.png" },
+    { id: 3, title: "City Skyline Night", category: "Freestyle", image: "/city_skyline_night.png" },
+    { id: 4, title: "Luxury Villa Tour", category: "Real Estate", image: "/luxury_villa.png" },
+    { id: 5, title: "Desert Rally", category: "Automotive", image: "/desert_rally.png" },
+    { id: 6, title: "Ocean Cliff Dive", category: "Cinematic", image: "/ocean_cliff_dive.png" },
 ];
 
 const Portfolio = () => {
@@ -40,8 +40,8 @@ const Portfolio = () => {
                             key={cat}
                             onClick={() => setFilter(cat)}
                             className={`px-4 py-2 text-sm font-bold uppercase tracking-wider transition-all border ${filter === cat
-                                    ? 'bg-cyan-500 border-cyan-500 text-black'
-                                    : 'bg-transparent border-white/10 text-gray-500 hover:border-white hover:text-white'
+                                ? 'bg-cyan-500 border-cyan-500 text-black'
+                                : 'bg-transparent border-white/10 text-gray-500 hover:border-white hover:text-white'
                                 }`}
                         >
                             {cat}
@@ -65,7 +65,7 @@ const Portfolio = () => {
                                 <img
                                     src={project.image}
                                     alt={project.title}
-                                    className="w-full h-full object-cover opacity-70 group-hover:scale-110 transition-transform duration-700"
+                                    className="w-full h-full object-cover opacity-100 group-hover:scale-110 transition-transform duration-700"
                                 />
                                 <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
                                 <div className="absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
