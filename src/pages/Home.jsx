@@ -51,7 +51,31 @@ const Home = () => {
                                 Showreel
                             </button>
                         </div>
+
                     </motion.div>
+                </div>
+            </section>
+
+            {/* Mobile Navigation Options */}
+            <section className="md:hidden py-12 bg-black border-b border-white/5">
+                <div className="container mx-auto px-6">
+                    <div className="grid grid-cols-2 gap-4">
+                        <Link to="/portfolio" className="p-4 bg-neutral-900/80 backdrop-blur-md rounded-lg border border-white/10 text-center hover:border-cyan-400 transition-colors">
+                            <span className="block text-cyan-400 font-bold uppercase tracking-wider text-sm">Portfolio</span>
+                        </Link>
+                        <Link to="/services" className="p-4 bg-neutral-900/80 backdrop-blur-md rounded-lg border border-white/10 text-center hover:border-cyan-400 transition-colors">
+                            <span className="block text-white font-bold uppercase tracking-wider text-sm">Services</span>
+                        </Link>
+                        <Link to="/locations" className="p-4 bg-neutral-900/80 backdrop-blur-md rounded-lg border border-white/10 text-center hover:border-cyan-400 transition-colors">
+                            <span className="block text-white font-bold uppercase tracking-wider text-sm">Locations</span>
+                        </Link>
+                        <Link to="/about" className="p-4 bg-neutral-900/80 backdrop-blur-md rounded-lg border border-white/10 text-center hover:border-cyan-400 transition-colors">
+                            <span className="block text-white font-bold uppercase tracking-wider text-sm">About</span>
+                        </Link>
+                        <Link to="/contact" className="col-span-2 p-4 bg-neutral-900/80 backdrop-blur-md rounded-lg border border-white/10 text-center hover:border-cyan-400 transition-colors">
+                            <span className="block text-white font-bold uppercase tracking-wider text-sm">Contact</span>
+                        </Link>
+                    </div>
                 </div>
             </section>
 
