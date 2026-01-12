@@ -58,7 +58,7 @@ const Home = () => {
 
             {/* Mobile Navigation Options */}
             {/* Mobile Navigation Options (Bento Grid) */}
-            <section className="md:hidden py-10 bg-black">
+            <section className="md:hidden py-2 bg-black">
                 <div className="container mx-auto px-4">
                     <div className="grid grid-cols-2 gap-3">
                         {/* Portfolio - Large Card */}
